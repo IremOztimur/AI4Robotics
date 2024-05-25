@@ -62,3 +62,89 @@ def kalman_filter(x, P):
 
 This Kalman filter will process the given measurements and predict the next state and covariance, iterating through all provided measurements.
 
+## State Transition Matrix Explanation
+
+The state transition matrix \( F \) defines how the state of a system evolves from one time step to the next. In the context of the Kalman filter for a 2D motion model, the state vector \( \mathbf{x} \) and the state transition matrix \( F \) can be represented as follows:
+
+### State Vector
+
+The state vector \( \mathbf{x} \) consists of the position and velocity components in both the \( x \) and \( y \) directions:
+
+$$
+\mathbf{x} = \begin{bmatrix}
+x \\
+y \\
+\dot{x} \\
+\dot{y}
+\end{bmatrix}
+$$
+
+### State Transition Matrix
+
+The state transition matrix \( F \) describes how each component of the state vector is updated based on the previous state. For a time step \(\Delta t\), the state transition matrix is:
+
+$$
+F = \begin{bmatrix}
+1 & 0 & \Delta t & 0 \\
+0 & 1 & 0 & \Delta t \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+
+### Summary
+
+- The first row updates the \( x \)-position based on the previous \( x \)-position and \( x \)-velocity.
+- The second row updates the \( y \)-position based on the previous \( y \)-position and \( y \)-velocity.
+- The third row keeps the \( x \)-velocity the same (constant).
+- The fourth row keeps the \( y \)-velocity the same (constant).
+
+Each row corresponds to the update of a specific component of the state vector, ensuring that both position and velocity in the \( x \) and \( y \) directions are appropriately adjusted according to the system's dynamics.
+
+### Example Calculation
+
+If the current state vector is:
+
+$$
+\mathbf{x} = \begin{bmatrix}
+x \\
+y \\
+\dot{x} \\
+\dot{y}
+\end{bmatrix}
+$$
+
+And the state transition matrix is:
+
+$$
+F = \begin{bmatrix}
+1 & 0 & \Delta t & 0 \\
+0 & 1 & 0 & \Delta t \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+
+Then the next state vector \( \mathbf{x}' \) is:
+
+$$
+\mathbf{x}' = F \mathbf{x} = \begin{bmatrix}
+1 & 0 & \Delta t & 0 \\
+0 & 1 & 0 & \Delta t \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+\dot{x} \\
+\dot{y}
+\end{bmatrix}
+= \begin{bmatrix}
+x + \dot{x} \Delta t \\
+y + \dot{y} \Delta t \\
+\dot{x} \\
+\dot{y}
+\end{bmatrix}
+$$
+
