@@ -85,3 +85,43 @@ v_k \\
 a \Delta t \\
 \end{bmatrix}
 \$$
+
+### Example
+
+#### Problem:
+A car starts from rest and accelerates uniformly at $\ 2 \ \text{m/s}^2 \$. Predict the displacement after 4 seconds using the Kalman filter framework.
+
+#### Solution:
+
+1. **Initial State**:
+   
+$$\
+   \mathbf{x}_0 = \begin{bmatrix}
+   0 \\
+   0 \\
+   \end{bmatrix}
+\$$
+   
+   (initial position and velocity are zero)
+
+2. **Time Step ($\ \Delta t \$)**:
+   
+$$\
+   \Delta t = 4 \ \text{s}
+\$$
+
+3. **Acceleration ($\ a \$)**:
+
+$$\
+   a = 2 \ \text{m/s}^2
+\$$
+
+4. **Prediction**:
+
+$$\
+   x_{1} = 0 + 0 \cdot 4 + \frac{1}{2} \cdot 2 \cdot (4)^2 = 16 \ \text{m}
+\$$
+
+$$\
+   v_{1} = 0 + 2 \cdot 4 = 8 \ \text{m/s}
+\$$
