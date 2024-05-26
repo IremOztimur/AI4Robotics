@@ -23,7 +23,7 @@ def predict(mean1, var1, mean2, var2):
 ## High Dimensional Gaussians (AKA Multivariate Gaussians)
 High Dimensional Gaussians, also known as Multivariate Gaussians, are a statistical concept used to model probability distributions in multidimensional spaces. Unlike the univariate Gaussian distribution, which describes single-variable distributions, Multivariate Gaussians extend this concept to describe the joint distribution of multiple variables simultaneously.
 
-#### Simplified Kalman Filter Formula 
+#### Simplified Kalman Filter Formula
 <img width="1242" alt="prediction-formula-simplification" src="https://github.com/IremOztimur/AI4Robotics/assets/77894816/712501bd-30ff-4240-a1e9-abde432065a7">
 
 
@@ -148,3 +148,14 @@ y + \dot{y} \Delta t \\
 \end{bmatrix}
 $$
 
+### A visual representation of Gaussian motion in a 2D dataset
+
+<img width="748" alt="2D Gaussian Motion in Kalman Filter" src="https://github.com/IremOztimur/AI4Robotics/assets/77894816/b6bc191e-1ad5-4086-84ef-6996debc1988">
+
+In the image:
+
+* The blue ellipses represent the predicted states (motion updates).
+* The red ellipses represent the corrected states after incorporating measurements.
+* The green ellipse represents the final state.
+
+The ellipses illustrate the uncertainty in the position, which decreases as more measurements are incorporated, demonstrating the effectiveness of the Kalman filter in reducing uncertainty over time.
