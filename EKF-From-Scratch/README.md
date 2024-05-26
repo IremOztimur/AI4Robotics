@@ -7,3 +7,9 @@
 
 ## Kalman Filter Calculations
 <img width="878" alt="kalman-calculations" src="https://github.com/IremOztimur/AI4Robotics/assets/77894816/4ae636e7-46d5-4d4c-8063-e358255b1736">
+
+# The Multi-Dimension Model
+TO-DO: Create a workflow of multi-dimension kalman filter
+
+## The Multi-Dimension Model 2-The State Matrix
+<img width="835" alt="state-matrix-multi" src="https://github.com/IremOztimur/AI4Robotics/assets/77894816/410bfdcf-f374-409c-b9c9-3b319d7c3bc1">
