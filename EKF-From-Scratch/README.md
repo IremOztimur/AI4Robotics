@@ -12,5 +12,16 @@
 ## The Multi-Dimension Model
 TO-DO: Create a workflow of multi-dimension kalman filter
 
-## The Multi-Dimension Model 2-The State Matrix
+## The Multi-Dimension Model - The State Matrix
 <img width="835" alt="state-matrix-multi" src="https://github.com/IremOztimur/AI4Robotics/assets/77894816/410bfdcf-f374-409c-b9c9-3b319d7c3bc1">
+
+<div style="display: flex; flex-direction: row; justify-content: space-around;">
+  <div style="text-align: center;">
+    <h3>State Matrix</h3>
+    <img width="300" alt="state-matrix-examples" src="https://github.com/IremOztimur/AI4Robotics/assets/77894816/1c26321b-ef3d-4a9d-81b4-c6b7868f9605">
+  </div>
+  <div style="text-align: center;">
+    <h3>Control Variable Matrix</h3>
+    <img width="300" alt="control variable matrix" src="https://github.com/IremOztimur/AI4Robotics/assets/77894816/fb940ad2-c420-43cf-9a7d-2904fe719338">
+  </div>
+</div>
