@@ -17,11 +17,26 @@ TO-DO: Create a workflow of multi-dimension kalman filter
 
 <div style="display: flex; flex-direction: row; justify-content: space-around;">
   <div style="text-align: center;">
-    <h3>State Matrix</h3>
+    <h3>State Matrix in 1D Example</h3>
     <img width="300" alt="state-matrix-examples" src="https://github.com/IremOztimur/AI4Robotics/assets/77894816/1c26321b-ef3d-4a9d-81b4-c6b7868f9605">
   </div>
   <div style="text-align: center;">
-    <h3>Control Variable Matrix</h3>
+    <h3>Control Variable Matrix in 1D Example</h3>
     <img width="300" alt="control variable matrix" src="https://github.com/IremOztimur/AI4Robotics/assets/77894816/fb940ad2-c420-43cf-9a7d-2904fe719338">
   </div>
+    <div style="text-align: center;">
+    <h3>Control Variable Matrix in 2D Example</h3>
+      <p>where 
+
+$$
+\mathbf{X_k} = \begin{bmatrix}
+x \\
+y \\
+\dot{x} \\
+\dot{y}
+\end{bmatrix}
+$$</p>
+    <img width="300" alt="control variable matrix 2D" src="https://github.com/IremOztimur/AI4Robotics/assets/77894816/f5653133-887d-4e2f-a7ef-73a3aedbe657">
+  </div>
 </div>
+
