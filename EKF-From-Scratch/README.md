@@ -40,3 +40,7 @@ $$</p>
   </div>
 </div>
 
+### Conversion of State Matrix in 2D without Noice Matrix
+<img width="500" alt="state-matrix-2D" src="https://github.com/IremOztimur/AI4Robotics/assets/77894816/65f741f9-91d2-43a6-a9c2-82dfa7ef8b2e">
+
+
