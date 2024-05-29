@@ -68,7 +68,7 @@ The state transition matrix \( F \) defines how the state of a system evolves fr
 
 ### State Vector
 
-The state vector \( \mathbf{x} \) consists of the position and velocity components in both the \( x \) and \( y \) directions:
+The state vector $\( \mathbf{x} \)$1 consists of the position and velocity components in both the \( x \) and \( y \) directions:
 
 $$
 \mathbf{x} = \begin{bmatrix}
