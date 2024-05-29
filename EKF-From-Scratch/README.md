@@ -46,4 +46,6 @@ $$</p>
 ### Conversion of State Matrix in 3D without Noice Matrix
 <img width="600" alt="state-matrix-3D" src="https://github.com/IremOztimur/AI4Robotics/assets/77894816/2bf23518-95e0-42b8-8f39-c3d338c72e88">
 
+## The Multi-Dimension Model - The Covariance Matrix
 
+<img width="850" alt="covariance-matrix" src="https://github.com/IremOztimur/AI4Robotics/assets/77894816/5aad09ea-dc6b-40f9-8220-8a0041df1eaa">
