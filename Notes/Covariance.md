@@ -1,6 +1,6 @@
 ## Understanding Covariance
 
-Here is a [Google Colab Notebook](https://colab.research.google.com/drive/1eJhvhDHHr40LCyf-Ixu5JyO9SKLn4369#scrollTo=RkFOM77HHma-) dedicated to covariance.
+Here is a [Google Colab Notebook](https://colab.research.google.com/drive/1eqvk7VJShesmg6woNGNGX2OQg3DqHFfk) dedicated to covariance.
 
 **Covariance** is a statistical measure that describes the extent to which two random variables change together. Fundamentally, it indicates whether an increase in one variable corresponds to an increase in the other (positive covariance), a decrease in the other (negative covariance), or no relationship at all (zero covariance).
 
