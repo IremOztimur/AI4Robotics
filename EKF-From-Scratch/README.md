@@ -42,3 +42,23 @@ In the context of dynamic systems (like those used in Kalman Filters), a linear 
    $\ x_k = A_{k-1} x_{k-1} + B_{k-1} u_{k-1} + w_{k-1} \$
 2. **Observation Model:** 
    $\ z_k = H_k x_k + v_k \$
+
+Both of these models are linear because they involve matrix-vector multiplication and addition of noise vectors, which are linear operations.
+
+---
+
+## Non-Linear Models
+
+Non-linear models do not have these straightforward properties. When the state transition or observation models are non-linear, they cannot be simply represented as matrix operations. This is where the Extended Kalman Filter (EKF) comes into play, which approximates these non-linear models as linear ones around the current state estimate using  **_Jacobian Matrices_**.
+
+A **non-linear model** is one in which the relationship between variables cannot be represented as a straight line. These models can include polynomials, exponentials, trigonometric functions, etc. Mathematically, they can be represented as:
+
+$\ y = f(x) \$
+
+where $\ f(x)\$ is a non-linear function.
+
+For dynamic systems, non-linear models for state transition and observations are:
+1. **State Transition Model:** $\ x_k=f(x_{k−1},u_{k−1})+w_{k-1} \$
+2. “**Observation Model:** $\ z_k= h(x_k) + v_k​ \$
+
+Here, *f* and *h* are non-linear functions.
