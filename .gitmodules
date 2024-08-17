@@ -1,0 +1,3 @@
+[submodule "EKF-From-Scratch/python_ugv_sim"]
+	path = EKF-From-Scratch/python_ugv_sim
+	url = https://github.com/jacobhiggins/python_ugv_sim.git
