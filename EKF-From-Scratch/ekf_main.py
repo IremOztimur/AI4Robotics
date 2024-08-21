@@ -68,14 +68,23 @@ def show_uncertainty_ellipse(env,center,width,angle):
     rotated_surf = pygame.transform.rotate(shape_surf, angle)
     env.map.blit(rotated_surf, rotated_surf.get_rect(center = target_rect.center))
 
+def sigma2transform(sigma_sub):
+	'''
+	2x2 state uncertainty in the x and y position
+	'''
+	[eigenvals, eigenvecs] = np.linalg.eig(sigma_sub)
+	angle = 180*np.arctan2(eigenvecs[1,0],eigenvecs[0,0])/np.pi
+	return eigenvals, angle
+
+
 def show_robot_estimate(env, sigma, mu):
 	'''
 	Show the robot estimate on the map
 	'''
 	rx, ry = mu[0], mu[1]
 	center = env.position2pixel((rx,ry))
-	width = (50,50)
-	angle = 0
+	eigenvals, angle = sigma2transform(sigma[0:2,0:2])
+	width = env.dist2pixellen(eigenvals[0]), env.dist2pixellen(eigenvals[1])
 	show_uncertainty_ellipse(env,center,width,angle)
 
 # < - - - - - - - - - - - EKF PLOTTING - - - - - - - - - - - >
@@ -93,6 +102,7 @@ if __name__=='__main__':
 
     # Initialize state estimate
     mu[0:3] = np.expand_dims(x_init, axis=1)
+    sigma[0:3,0:3] = 0.05*np.eye(3)
 
     # Initialize and display environment
     env = environment.Environment(map_image_path="./python_ugv_sim/maps/map_blank.png")
