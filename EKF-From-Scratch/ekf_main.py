@@ -21,7 +21,17 @@ import pygame
 # < - - - - - - - - - - - EKF SLAM MATERIAL - - - - - - - - - - - >
 # ---> Robot Parameters
 n_state = 3 # state dimension of the robot (x, y, theta)
-n_landmarks = 1 # DEFAULT: 1 landmark
+
+# ---› Landmark parameters
+landmarks = [(4,4),
+(4,8),
+(8,8),
+(12,8),
+(16,8),
+(16,4),
+(12,4)]
+
+n_landmarks = len(landmarks)
 
 # ---› Noise parameters
 R = np.diag([0.002,0.002,0.0005])
@@ -76,6 +86,14 @@ def sigma2transform(sigma_sub):
 	angle = 180*np.arctan2(eigenvecs[1,0],eigenvecs[0,0])/np.pi
 	return eigenvals, angle
 
+def show_landmark_location(landmarks,env):
+    '''
+    Visualize actual landmark location
+    '''
+    for landmark in landmarks:
+        lx_pixel, ly_pixel = env.position2pixel(landmark)
+        r_pixel = env.dist2pixellen(0.2)
+        pygame.gfxdraw.filled_circle(env.get_pygame_surface(),lx_pixel,ly_pixel,r_pixel,(255,0,255)) #
 
 def show_robot_estimate(env, sigma, mu):
 	'''
@@ -113,10 +131,14 @@ if __name__=='__main__':
         for event in pygame.event.get():
             if event.type==pygame.QUIT:
                 running = False
+            if event.type == pygame.KEYDOWN:
+                  if event.key == pygame.K_ESCAPE or event.key == pygame.K_q:
+                        running = False
             u = robot.update_u(u,event) if event.type==pygame.KEYUP or event.type==pygame.KEYDOWN else u # Update controls based on key states
         robot.move_step(u,dt) # Integrate EOMs forward, i.e., move robot
         mu, sigma = prediction_update(mu, sigma, u, dt)
         env.show_map() # Re-blit map
         env.show_robot(robot) # Re-blit robot
-        show_robot_estimate(env,sigma,mu) # Show EKF estimates
+        show_robot_estimate(env,sigma,mu)
+        show_landmark_location(landmarks, env)
         pygame.display.update() # Update display
